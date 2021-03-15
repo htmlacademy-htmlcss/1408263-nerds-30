@@ -141,7 +141,7 @@
             <li class="product-item">
               <h3>Макет Sedona</h3>
               <a href="#.html">
-                <img src="img/img-sedona.jpg" width="359" height="578" alt="sedona-template">
+                <img class="catalog-item-image" src="img/img-sedona.jpg" width="359" height="578" alt="sedona-template">
               </a>
               <div class="template-info">
                 <p class="item-name">sedona</p>
@@ -152,7 +152,7 @@
             <li class="product-item">
               <h3>Макет Pink</h3>
               <a href="#.html">
-                <img src="img/img-pink.jpg" width="359" height="578" alt="Pink-template">
+                <img class="catalog-item-image" src="img/img-pink.jpg" width="359" height="578" alt="Pink-template">
               </a>
               <div class="template-info">
                 <div class="template-info-wrapper">
@@ -165,7 +165,7 @@
             <li class="product-item">
               <h3>Макет Barbershop</h3>
               <a href="#.html">
-                <img src="img/img-barbershop.jpg" width="359" height="578" alt="Barbershop-template">
+                <img class="catalog-item-image" src="img/img-barbershop.jpg" width="359" height="578" alt="Barbershop-template">
               </a>
               <div class="template-info">
                 <p class="item-name">Barbershop</p>
@@ -176,7 +176,7 @@
             <li class="product-item">
               <h3>Макет Mishka</h3>
               <a href="#.html">
-                <img src="img/img-mishka.jpg" width="359" height="578" alt="Mishka-template">
+                <img class="catalog-item-image" src="img/img-mishka.jpg" width="359" height="578" alt="Mishka-template">
               </a>
               <div class="template-info">
                 <p class="item-name">Mishka</p>
@@ -187,7 +187,7 @@
             <li class="product-item">
               <h3>Макет A Plus</h3>
               <a href="#.html">
-                <img src="img/img-aplus.jpg" width="359" height="578" alt="a_plus-template">
+                <img class="catalog-item-image" src="img/img-aplus.jpg" width="359" height="578" alt="a_plus-template">
               </a>
               <div class="template-info">
                 <p class="item-name">A Plus</p>
@@ -198,7 +198,7 @@
             <li class="product-item">
               <h3>Макет Кваст</h3>
               <a href="#.html">
-                <img src="img/img-kvast.jpg" width="359" height="578" alt="kvast-template">
+                <img class="catalog-item-image" src="img/img-kvast.jpg" width="359" height="578" alt="kvast-template">
               </a>
               <div class="template-info">
                 <p class="item-name">КВАСТ</p>
@@ -228,21 +228,19 @@
 
 
     <section class="contacts">
-      <div class="container">
-        <div class="contacts-block">
-          <h3>Nёrds design studio</h3>
-          <p>191186, Санкт-Петербург,<br>
-            ул. Б. Конюшенная, д. 19/8</p>
-          <p>тел.<a class="contacts-phone" href="tel:+78122757575"></a> +7 (812) 275-75-75</p>
-          <button aria-label="Заполнить контактные данные" class="btn btn-map">напишите нам</button>
-        </div>
-        <div class="map-picture">
-          <img src="img/map.png" alt="map" width="1440" height="416">
-        </div>
-        <div class="map">
-        </div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6037872533261!2d30.320858716186894!3d59.93871648187617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1615570045067!5m2!1sru!2sru"
+        width="100%" height="416" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <div class="container">
+      <div class="contacts-block">
+        <h3>Nёrds design studio</h3>
+        <p>191186, Санкт-Петербург,<br>
+          ул. Б. Конюшенная, д. 19/8</p>
+        <p>тел.<a class="contacts-phone" href="tel:+78122757575"></a> +7 (812) 275-75-75</p>
+        <button class="btn btn-map">напишите нам</button>
       </div>
-    </section>
+    </div>
+  </section>
   </main>
   <footer class="main-footer">
     <div class="container">
@@ -259,6 +257,27 @@
       </div>
     </div>
   </footer>
+  <section class="pop-up modal">
+    <h3>Напишите нам</h3>
+    <form class="popup-form" action="https://echo.htmlacademy.ru/" method="post">
+      <p class="popup-name">
+        <label for="name">Ваше имя:</label>
+        <input type="text" id="name" name="name" placeholder="Имя Фамилия">
+      </p>
+      <p class="popup-email">
+        <label for="email">Ваш email:</label>
+        <input id="email" type="email" name="email" placeholder="email@example.com">
+      </p>
+      <p class="popup-message">
+        <label for="message">Текст письма:</label>
+        <input type="text" id="message" name="customer-message" placeholder="В свободной форме">
+      </p>
+      <button class="btn popup-button">отправить</button>
+    </form>
+    <button class="modal-close" type="button" aria-label="Закрыть"></button>
+  </section>
+  <script src="/js/popup.js"></script>
+  <script src="/js/underline.js"></script>
 </body>
 
 </html>

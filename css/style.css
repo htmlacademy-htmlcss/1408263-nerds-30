@@ -273,7 +273,7 @@ main {
 }
 
 .active-page {
-  border-bottom: 1px solid var(--button-red);
+  border-bottom: 2px solid var(--button-red);
 }
 
 .page-title h1{
@@ -457,16 +457,22 @@ main {
   left: -36px;
 }
 
+
 .filter-input-radio:checked + label::after {
   content: "";
   position: absolute;
   top: 5px;
   left: -28px;
   border-radius: 50%;
-  width: 9px;
-  height: 9px;
+  width: 8px;
+  height: 8px;
   background-color: var(--filter-buttons);
   opacity: 0.4;
+}
+
+.filter-input-radio:checked:hover + label::after,
+.filter-input-radio:hover + label::before {
+  opacity: 1;
 }
 
 
@@ -497,12 +503,16 @@ main {
   opacity: 0.3;
 }
 
-.radio-button label:hover {
-	color: var(--filter-buttons);
+.filter-input-checkbox:checked:hover + label::after,
+.filter-input-checkbox:hover + label::before {
+  opacity: 1;
 }
+
 .radio-button label:disabled {
 	filter: grayscale(100%);
 }
+
+
 .filter-button {
   font-family: "Roboto", Arial, sans-serif;
   font-weight: 500;
@@ -658,17 +668,19 @@ main {
 
 }
 
+.slider-btn:hover {
+  background-color: var(--push-red);
+}
+
 .slider-btn:active {
   background-color: var(--push-red);
 }
 
 
 
-/* What we can */
 
-section h2 {
-  display: none;
-}
+
+/* What we can */
 
 .features-list {
   display: grid;
@@ -701,6 +713,15 @@ section h2 {
   padding-left: 39px;
   padding-right: 40px;
 }
+
+.feature-image {
+  width: 300px;
+  height: 146px;
+  margin: 0;
+  object-fit: contain;
+  background-color: #f7f7f7;
+}
+
 
 .buy1 {
   background-color: var(--button-red);
@@ -860,6 +881,7 @@ margin-top: 39px;
 /* Brands slider */
 .brands-list {
   border-top: 2px solid var(--header-gray);
+  margin: 0;
 }
 
 .brands-list li {
@@ -958,6 +980,7 @@ margin-top: 39px;
 .product-item h3 {
   display:none
 }
+
 .item-name {
   font-family: "Roboto", Arial, sans-serif;
   font-weight: 700;
@@ -1013,6 +1036,14 @@ margin-top: 39px;
 .template-btn:active {
   background-color: var(--push-red);
   opacity: 0.3;
+}
+
+.catalog-item-image {
+  width: 358px;
+  height: 578px;
+  margin: 0;
+  object-fit: contain;
+  background-color: #f7f7f7;
 }
 
 /* Pagination */
@@ -1081,17 +1112,16 @@ margin-top: 39px;
 /* Map */
 .contacts {
   margin-top: 80px;
+}
+.contacts .container {
   position: relative;
 }
 
-.map-wrapper {
-
-}
 .contacts-block {
   position: absolute;
   content: "";
-  top: 54px;
-
+  bottom: 54px;
+  left: 140px;
   background-color: var(--basic-white);
   padding: 49px 50px 47px 50px;
   margin: 0;
@@ -1119,21 +1149,14 @@ margin-top: 39px;
   padding-left: 44px;
   padding-right: 44px;
 }
-.map-point {
-  position: absolute;
-  content: "";
-  left: 822px;
-  top: 86px;
-  z-index: 2;
-  width: 231px;
-  height: 190px;
-}
+
 .btn-map:hover {
   background-color: var(--focus-red);
 }
 .btn-map:active {
   background-color: var(--push-red);
 }
+
 /* Footer */
 
 .main-footer {
@@ -1177,6 +1200,10 @@ position: relative;
 
 .footer-social {
   margin-left: 140px;
+}
+
+.footer-social li:first-child  {
+  margin-left: 0;
 }
 
 .social-vk,
@@ -1257,6 +1284,7 @@ position: relative;
   color: var(--basic-black);
   background-color: var(--basic-white);
   box-sizing: padding-box;
+  display: none;
 }
 
 .popup-login {
@@ -1271,6 +1299,15 @@ position: relative;
   padding: 63px 99px 84px 100px;
   box-sizing: padding-box;
   box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
+}
+
+.popup-show {
+  display: block;
+  animation: bounce 0.6s;
+}
+
+.popup-error {
+  animation: shake 0.6s;
 }
 
 .pop-up h3 {
@@ -1376,17 +1413,21 @@ position: relative;
   border: 0;
   cursor: pointer;
   opacity: 0.3;
+  border: none;
 }
 
 .modal-close:focus {
+  border: none;
   opacity: 1;
 }
 
 .popup-button:hover {
   background-color: var(--focus-red);
+  border: none;
 }
 .popup-button:focus {
   background-color: var(--push-red);
+  border: none;
 }
 
 .popup-form input:hover {
@@ -1400,4 +1441,45 @@ position: relative;
 .popup-form input:invalid {
   border-color: var(--focus-red);
   color: var(--focus-red);
+}
+
+/* Animations */
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-2000px);
+  }
+
+  70% {
+    transform: translateY(30px);
+  }
+
+  90% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
 }
